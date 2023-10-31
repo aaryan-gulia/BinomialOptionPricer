@@ -5,8 +5,11 @@
 
 using namespace std;
 
-float europeanCall(float timePeriod, int steps, float rate, float upFactor, float downFactor, float strike, float underlying){
+float europeanCall(float timePeriod, int steps, float rate, float vol, float strike, float underlying){
     float dt = timePeriod/steps;
+    float upFactor = exp(vol * sqrt(dt));
+    float downFactor = exp(-vol * sqrt(dt));
+    cout<<downFactor<<" " <<upFactor<<endl;
     float riskNeutralProb = (std::exp(rate * dt) - downFactor)/(upFactor - downFactor);
     vector<float> optionPayouts;
     
@@ -27,24 +30,23 @@ float europeanCall(float timePeriod, int steps, float rate, float upFactor, floa
 }
 
 int main() {
-    float timePeriod,steps,rate,upFactor,downFactor,strike,underlying;
+    float timePeriod,steps,rate,vol,strike,underlying;
     //taking user input for information about call option
-    cout<<"Enter the strike price: ";
+    cout<<"Enter the required option parameters\n"<<"-------------------------------------\n";
+    cout<<"strike price: ";
     cin>> strike;
-    cout<<"Enter the current price of the underlying asset: ";
+    cout<<"underlying asset price: ";
     cin>> underlying;
-    cout<<"Enter the increasing factor: ";
-    cin>> upFactor;
-    cout<<"Enter the decreasing factor: ";
-    cin>> downFactor;
-    cout<<"Enter the total time period: ";
+    cout<<"volatility: ";
+    cin>> vol;
+    cout<<"time period: ";
     cin>> timePeriod;
-    cout<<"Enter the number of time steps: ";
+    cout<<"number of steps: ";
     cin>> steps;
-    cout<<"Enter the Interest rate: ";
+    cout<<"risk free interest rate: ";
     cin>> rate;
     
-    float optionPrice = europeanCall(timePeriod,steps,rate,upFactor,downFactor,strike,underlying);
-    cout <<"------------------------------------------------------\n"<<"Option price: " << optionPrice << std::endl;
+    float optionPrice = europeanCall(timePeriod,steps,rate,vol,strike,underlying);
+    cout <<"-------------------------------------\n"<<"Option price: " << optionPrice << std::endl;
     return 0;
 }
