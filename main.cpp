@@ -1,22 +1,35 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
 float europeanCall(float timePeriod, int steps, float rate, float upFactor, float downFactor, float strike, float underlying){
     float dt = timePeriod/steps;
     float riskNeutralProb = (std::exp(rate * dt) - downFactor)/(upFactor - downFactor);
-    float high = std::max((underlying * upFactor - strike), float(0.0));
-    float low = std::max((underlying * downFactor - strike), float(0.0));
-    float optionPrice = 1 / (1 + rate * dt) * (riskNeutralProb * high + (1 - riskNeutralProb) * low);
-    return optionPrice;
+    vector<float> optionPayouts;
+    
+    for(int i = 0; i <= steps; i++){
+        float underlyingFinal = underlying * pow(upFactor, steps - i) * pow(downFactor, i);
+        optionPayouts.push_back(max(underlyingFinal - strike,float(0.0)));
+    }
+    
+    while(optionPayouts.size() > 1){
+        vector<float> tempPrice;
+        for(int j = 0; j < optionPayouts.size()-1; j++){
+            tempPrice.push_back(1 / (1 + rate * dt) * (riskNeutralProb * optionPayouts[j]+ (1 - riskNeutralProb) * optionPayouts[j+1]));
+        }
+        optionPayouts = tempPrice;
+    }
+    
+    return optionPayouts[0];
 }
 
 int main() {
     float timePeriod,steps,rate,upFactor,downFactor,strike,underlying;
     //taking user input for information about call option
-    cout<<"Enter the strile price: ";
+    cout<<"Enter the strike price: ";
     cin>> strike;
     cout<<"Enter the current price of the underlying asset: ";
     cin>> underlying;
@@ -32,6 +45,6 @@ int main() {
     cin>> rate;
     
     float optionPrice = europeanCall(timePeriod,steps,rate,upFactor,downFactor,strike,underlying);
-    cout << "option price: " << optionPrice << std::endl;
+    cout <<"------------------------------------------------------\n"<<"Option price: " << optionPrice << std::endl;
     return 0;
 }
