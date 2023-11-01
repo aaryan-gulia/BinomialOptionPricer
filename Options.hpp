@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <vector>
 #include <unordered_map>
+#include <string>
 
 using namespace std;
 
@@ -32,20 +33,36 @@ private:
     int steps;
     float rate, vol, strike, underlying, timePeriod;
     float dt, upFactor, downFactor, riskNeutralProb;
-    enum Style{
+    enum OptionType{
         europeanCall = 0,
         europeanPut = 1,
-        AmericanCall = 3,
-        AmericanPut = 4
-    }currStyle;
+        americanCall = 3,
+        americanPut = 4
+    }currType;
+    
+    friend istream& operator>>(std::istream& is, OptionType& optionType)
+    {
+        string name;
+        is >> name;
+
+        if (name == "EC")
+            optionType = europeanCall;
+        else if (name == "EP")
+            optionType = europeanPut;
+        else if (name == "AC")
+            optionType = americanCall;
+        else if (name == "AP")
+            optionType = americanPut;
+
+        return is;
+    }
     
     hashMap underlyingPrices();
-    hashMap callOptionPrices(hashMap underlyingTree);
     
-    float priceEuropeanCall();
-    float priceEuropeanPut();
-    float priceAmericanCall();
-    float priceAmericanPut();
+    float priceEuropeanCall(hashMap underlyingTree);
+    float priceEuropeanPut(hashMap underlyingTree);
+    float priceAmericanCall(hashMap underlyingTree);
+    float priceAmericanPut(hashMap underlyingTree);
     
 public:
     float price();
