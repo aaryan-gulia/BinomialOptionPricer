@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		79F222D22AF20C2B008AC9B9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79F222D12AF20C2B008AC9B9 /* main.cpp */; };
+		79F222DA2AF20C86008AC9B9 /* Options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79F222D82AF20C86008AC9B9 /* Options.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		79F222CE2AF20C2B008AC9B9 /* BinomialOptionPricer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinomialOptionPricer; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F222D12AF20C2B008AC9B9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		79F222D82AF20C86008AC9B9 /* Options.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Options.cpp; sourceTree = "<group>"; };
+		79F222D92AF20C86008AC9B9 /* Options.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Options.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				79F222D12AF20C2B008AC9B9 /* main.cpp */,
+				79F222D82AF20C86008AC9B9 /* Options.cpp */,
+				79F222D92AF20C86008AC9B9 /* Options.hpp */,
 			);
 			path = BinomialOptionPricer;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79F222DA2AF20C86008AC9B9 /* Options.cpp in Sources */,
 				79F222D22AF20C2B008AC9B9 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +251,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +261,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

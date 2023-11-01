@@ -11,6 +11,8 @@ Options::Options(){
     cin>> strike;
     cout<<"underlying asset price: ";
     cin>> underlying;
+    //cout<<"volitility: ";
+    //cin>>vol;
     cout<<"up multiplier: ";
     cin>> upFactor;
     cout<<"down multiplier: ";
