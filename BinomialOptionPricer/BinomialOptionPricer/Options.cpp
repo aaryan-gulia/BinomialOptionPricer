@@ -11,12 +11,14 @@ Options::Options(){
     cin>> strike;
     cout<<"underlying asset price: ";
     cin>> underlying;
-    //cout<<"volitility: ";
-    //cin>>vol;
-    cout<<"up multiplier: ";
-    cin>> upFactor;
-    cout<<"down multiplier: ";
-    cin>> downFactor;
+    cout<<"volitility: ";
+    cin>>vol;
+    cout<<"Dividend Yield: ";
+    cin>>dividend;
+    //cout<<"up multiplier: ";
+    //cin>> upFactor;
+    //cout<<"down multiplier: ";
+    //cin>> downFactor;
     cout<<"time period: ";
     cin>> timePeriod;
     cout<<"number of steps: ";
@@ -25,9 +27,9 @@ Options::Options(){
     cin>> rate;
     
     dt = timePeriod/steps;
-    //upFactor = exp(vol * sqrt(dt));
-    //downFactor = exp(-vol * sqrt(dt));
-    riskNeutralProb = (std::exp(rate * dt) - downFactor)/(upFactor - downFactor);
+    upFactor = exp(vol * sqrt(dt));
+    downFactor = exp(-vol * sqrt(dt));
+    riskNeutralProb = (std::exp((rate - dividend) * dt) - downFactor)/(upFactor - downFactor);
 }
 
 Options::hashMap Options::underlyingPrices(){

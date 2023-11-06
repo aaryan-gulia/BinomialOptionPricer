@@ -31,7 +31,7 @@ private:
     typedef unordered_map<vector<int>,float,VectorHasher> hashMap;
     
     int steps;
-    float rate, vol, strike, underlying, timePeriod;
+    float rate, vol, dividend, strike, underlying, timePeriod;
     float dt, upFactor, downFactor, riskNeutralProb;
     enum OptionType{
         europeanCall = 0,
