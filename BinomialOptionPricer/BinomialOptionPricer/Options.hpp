@@ -26,37 +26,27 @@ struct VectorHasher {
 };
 
 class Options{
-
 private:
+    enum OptionType{
+        europeanCall = 1,
+        europeanPut = 2,
+        americanCall = 3,
+        americanPut = 4
+    }currType;
+    
+    friend istream& operator>>(std::istream& is, OptionType& optionType);
+    friend istream& operator>>(std::istream& is, Options &option);
+    friend ostream& operator<<(std::ostream& os, const Options &option);
+    friend class IO;
+    
     typedef unordered_map<vector<int>,float,VectorHasher> hashMap;
     
     int steps;
     float rate, vol, dividend, strike, underlying, timePeriod;
     float dt, upFactor, downFactor, riskNeutralProb;
-    enum OptionType{
-        europeanCall = 0,
-        europeanPut = 1,
-        americanCall = 3,
-        americanPut = 4
-    }currType;
     
-    friend istream& operator>>(std::istream& is, OptionType& optionType)
-    {
-        string name;
-        is >> name;
+    void calc();
 
-        if (name == "EC")
-            optionType = europeanCall;
-        else if (name == "EP")
-            optionType = europeanPut;
-        else if (name == "AC")
-            optionType = americanCall;
-        else if (name == "AP")
-            optionType = americanPut;
-
-        return is;
-    }
-    
     hashMap underlyingPrices();
     
     float priceEuropeanCall(hashMap underlyingTree);
@@ -66,7 +56,6 @@ private:
     
 public:
     float price();
-    Options();
     
 };
 

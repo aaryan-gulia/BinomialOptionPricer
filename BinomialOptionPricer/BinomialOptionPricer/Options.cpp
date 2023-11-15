@@ -1,31 +1,11 @@
 #include "Options.hpp"
 #include <iostream>
 #include <unordered_map>
+#include "IO.hpp"
 
 using namespace std;
 
-Options::Options(){
-    cout<<"option type \n(European Call: EC, European Put: EP, American Call: AC, American Put: AP)\n";
-    cin>>currType;
-    cout<<"strike price: ";
-    cin>> strike;
-    cout<<"underlying asset price: ";
-    cin>> underlying;
-    cout<<"volitility: ";
-    cin>>vol;
-    cout<<"Dividend Yield: ";
-    cin>>dividend;
-    //cout<<"up multiplier: ";
-    //cin>> upFactor;
-    //cout<<"down multiplier: ";
-    //cin>> downFactor;
-    cout<<"time period: ";
-    cin>> timePeriod;
-    cout<<"number of steps: ";
-    cin>> steps;
-    cout<<"risk free interest rate: ";
-    cin>> rate;
-    
+void Options::calc(){
     dt = timePeriod/steps;
     upFactor = exp(vol * sqrt(dt));
     downFactor = exp(-vol * sqrt(dt));
@@ -109,6 +89,7 @@ float Options::priceAmericanPut(hashMap underlyingTree){
 }
 
 float Options::price(){
+    calc();
     hashMap underlyingTree = underlyingPrices();
     switch (currType) {
         case europeanCall:
