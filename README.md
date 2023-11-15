@@ -3,13 +3,15 @@
 This C++ command-line tool implements a simple binomial model method to calculate the prices for American and European Call and Put options. You can download the repository and directly access the executable files on MacOS. For any other system, follow the below instructions to execute the source code and have your own version of the command-line app!
 
 ## Current Features
--  European put and call options for non-dividend stocks.
--  American put and call option for non-dividend stocks.
+European/American put and call options for
+-  Dividend and non-dividend stocks
+-  foreign currencies (use dividend yield as currency's risk-free rate)
+-  interest-yielding simple bonds
 
 ## Upcoming Features
-- Support for options on dividend stocks and more complicated assets.
-- Additional features or pricing option strategies and obtaining payoff functions.
-- Support to calculate simple Greeks through the binomial approximation. 
+- Support for more complicated assets and Asian options
+- Additional features or pricing option strategies and obtaining payoff functions
+- Support to calculate simple Greeks through the binomial approximation
 
 # Getting Started
 Requirement: C++ compiler (supporting C++11 or higher)
