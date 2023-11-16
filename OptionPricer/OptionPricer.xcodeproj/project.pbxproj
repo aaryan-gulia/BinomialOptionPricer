@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79B91A372B00F53800BAA6E8 /* IO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79B91A352B00F53800BAA6E8 /* IO.cpp */; };
-		79DCF10B2B050E6600D4F264 /* Algorithms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79DCF1092B050E6600D4F264 /* Algorithms.cpp */; };
-		79F222D22AF20C2B008AC9B9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79F222D12AF20C2B008AC9B9 /* main.cpp */; };
-		79F222DA2AF20C86008AC9B9 /* Options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79F222D82AF20C86008AC9B9 /* Options.cpp */; };
+		7917B6EF2B05D515002DA480 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7917B6EE2B05D515002DA480 /* main.cpp */; };
+		7917B6F72B05D545002DA480 /* Algorithms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7917B6F52B05D545002DA480 /* Algorithms.cpp */; };
+		7917B6FA2B05D591002DA480 /* Options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7917B6F82B05D591002DA480 /* Options.cpp */; };
+		7917B6FD2B05D5E3002DA480 /* IO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7917B6FB2B05D5E3002DA480 /* IO.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		79F222CC2AF20C2B008AC9B9 /* CopyFiles */ = {
+		7917B6E92B05D515002DA480 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -26,19 +26,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		79A8ACA62B05BD94001A0213 /* BinomialOptionPricer.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = BinomialOptionPricer.profdata; sourceTree = "<group>"; };
-		79B91A352B00F53800BAA6E8 /* IO.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IO.cpp; sourceTree = "<group>"; };
-		79B91A362B00F53800BAA6E8 /* IO.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IO.hpp; sourceTree = "<group>"; };
-		79DCF1092B050E6600D4F264 /* Algorithms.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Algorithms.cpp; sourceTree = "<group>"; };
-		79DCF10A2B050E6600D4F264 /* Algorithms.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Algorithms.hpp; sourceTree = "<group>"; };
-		79F222CE2AF20C2B008AC9B9 /* BinomialOptionPricer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinomialOptionPricer; sourceTree = BUILT_PRODUCTS_DIR; };
-		79F222D12AF20C2B008AC9B9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		79F222D82AF20C86008AC9B9 /* Options.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Options.cpp; sourceTree = "<group>"; };
-		79F222D92AF20C86008AC9B9 /* Options.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Options.hpp; sourceTree = "<group>"; };
+		7917B6EB2B05D515002DA480 /* OptionPricer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OptionPricer; sourceTree = BUILT_PRODUCTS_DIR; };
+		7917B6EE2B05D515002DA480 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7917B6F52B05D545002DA480 /* Algorithms.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Algorithms.cpp; sourceTree = "<group>"; };
+		7917B6F62B05D545002DA480 /* Algorithms.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Algorithms.hpp; sourceTree = "<group>"; };
+		7917B6F82B05D591002DA480 /* Options.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Options.cpp; sourceTree = "<group>"; };
+		7917B6F92B05D591002DA480 /* Options.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Options.hpp; sourceTree = "<group>"; };
+		7917B6FB2B05D5E3002DA480 /* IO.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IO.cpp; sourceTree = "<group>"; };
+		7917B6FC2B05D5E3002DA480 /* IO.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IO.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		79F222CB2AF20C2B008AC9B9 /* Frameworks */ = {
+		7917B6E82B05D515002DA480 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,80 +47,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		79A8ACA52B05BD94001A0213 /* OptimizationProfiles */ = {
+		7917B6E22B05D515002DA480 = {
 			isa = PBXGroup;
 			children = (
-				79A8ACA62B05BD94001A0213 /* BinomialOptionPricer.profdata */,
-			);
-			path = OptimizationProfiles;
-			sourceTree = "<group>";
-		};
-		79F222C52AF20C2B008AC9B9 = {
-			isa = PBXGroup;
-			children = (
-				79F222D02AF20C2B008AC9B9 /* BinomialOptionPricer */,
-				79F222CF2AF20C2B008AC9B9 /* Products */,
-				79A8ACA52B05BD94001A0213 /* OptimizationProfiles */,
+				7917B6ED2B05D515002DA480 /* OptionPricer */,
+				7917B6EC2B05D515002DA480 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		79F222CF2AF20C2B008AC9B9 /* Products */ = {
+		7917B6EC2B05D515002DA480 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				79F222CE2AF20C2B008AC9B9 /* BinomialOptionPricer */,
+				7917B6EB2B05D515002DA480 /* OptionPricer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		79F222D02AF20C2B008AC9B9 /* BinomialOptionPricer */ = {
+		7917B6ED2B05D515002DA480 /* OptionPricer */ = {
 			isa = PBXGroup;
 			children = (
-				79F222D12AF20C2B008AC9B9 /* main.cpp */,
-				79B91A352B00F53800BAA6E8 /* IO.cpp */,
-				79B91A362B00F53800BAA6E8 /* IO.hpp */,
-				79F222D82AF20C86008AC9B9 /* Options.cpp */,
-				79F222D92AF20C86008AC9B9 /* Options.hpp */,
-				79DCF1092B050E6600D4F264 /* Algorithms.cpp */,
-				79DCF10A2B050E6600D4F264 /* Algorithms.hpp */,
+				7917B6EE2B05D515002DA480 /* main.cpp */,
+				7917B6F52B05D545002DA480 /* Algorithms.cpp */,
+				7917B6F62B05D545002DA480 /* Algorithms.hpp */,
+				7917B6F82B05D591002DA480 /* Options.cpp */,
+				7917B6F92B05D591002DA480 /* Options.hpp */,
+				7917B6FB2B05D5E3002DA480 /* IO.cpp */,
+				7917B6FC2B05D5E3002DA480 /* IO.hpp */,
 			);
-			path = BinomialOptionPricer;
+			path = OptionPricer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		79F222CD2AF20C2B008AC9B9 /* BinomialOptionPricer */ = {
+		7917B6EA2B05D515002DA480 /* OptionPricer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 79F222D52AF20C2B008AC9B9 /* Build configuration list for PBXNativeTarget "BinomialOptionPricer" */;
+			buildConfigurationList = 7917B6F22B05D515002DA480 /* Build configuration list for PBXNativeTarget "OptionPricer" */;
 			buildPhases = (
-				79F222CA2AF20C2B008AC9B9 /* Sources */,
-				79F222CB2AF20C2B008AC9B9 /* Frameworks */,
-				79F222CC2AF20C2B008AC9B9 /* CopyFiles */,
+				7917B6E72B05D515002DA480 /* Sources */,
+				7917B6E82B05D515002DA480 /* Frameworks */,
+				7917B6E92B05D515002DA480 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BinomialOptionPricer;
-			productName = BinomialOptionPricer;
-			productReference = 79F222CE2AF20C2B008AC9B9 /* BinomialOptionPricer */;
+			name = OptionPricer;
+			productName = OptionPricer;
+			productReference = 7917B6EB2B05D515002DA480 /* OptionPricer */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		79F222C62AF20C2B008AC9B9 /* Project object */ = {
+		7917B6E32B05D515002DA480 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					79F222CD2AF20C2B008AC9B9 = {
+					7917B6EA2B05D515002DA480 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
 			};
-			buildConfigurationList = 79F222C92AF20C2B008AC9B9 /* Build configuration list for PBXProject "BinomialOptionPricer" */;
+			buildConfigurationList = 7917B6E62B05D515002DA480 /* Build configuration list for PBXProject "OptionPricer" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -129,32 +119,32 @@
 				en,
 				Base,
 			);
-			mainGroup = 79F222C52AF20C2B008AC9B9;
-			productRefGroup = 79F222CF2AF20C2B008AC9B9 /* Products */;
+			mainGroup = 7917B6E22B05D515002DA480;
+			productRefGroup = 7917B6EC2B05D515002DA480 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				79F222CD2AF20C2B008AC9B9 /* BinomialOptionPricer */,
+				7917B6EA2B05D515002DA480 /* OptionPricer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		79F222CA2AF20C2B008AC9B9 /* Sources */ = {
+		7917B6E72B05D515002DA480 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79F222DA2AF20C86008AC9B9 /* Options.cpp in Sources */,
-				79DCF10B2B050E6600D4F264 /* Algorithms.cpp in Sources */,
-				79B91A372B00F53800BAA6E8 /* IO.cpp in Sources */,
-				79F222D22AF20C2B008AC9B9 /* main.cpp in Sources */,
+				7917B6EF2B05D515002DA480 /* main.cpp in Sources */,
+				7917B6F72B05D545002DA480 /* Algorithms.cpp in Sources */,
+				7917B6FA2B05D591002DA480 /* Options.cpp in Sources */,
+				7917B6FD2B05D5E3002DA480 /* IO.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		79F222D32AF20C2B008AC9B9 /* Debug */ = {
+		7917B6F02B05D515002DA480 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -215,7 +205,7 @@
 			};
 			name = Debug;
 		};
-		79F222D42AF20C2B008AC9B9 /* Release */ = {
+		7917B6F12B05D515002DA480 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -269,10 +259,9 @@
 			};
 			name = Release;
 		};
-		79F222D62AF20C2B008AC9B9 /* Debug */ = {
+		7917B6F32B05D515002DA480 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /Users/aaryangulia/Downloads/boost_1_82_0;
 				LIBRARY_SEARCH_PATHS = /Users/aaryangulia/Downloads/boost_1_82_0;
@@ -280,10 +269,9 @@
 			};
 			name = Debug;
 		};
-		79F222D72AF20C2B008AC9B9 /* Release */ = {
+		7917B6F42B05D515002DA480 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /Users/aaryangulia/Downloads/boost_1_82_0;
 				LIBRARY_SEARCH_PATHS = /Users/aaryangulia/Downloads/boost_1_82_0;
@@ -294,25 +282,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		79F222C92AF20C2B008AC9B9 /* Build configuration list for PBXProject "BinomialOptionPricer" */ = {
+		7917B6E62B05D515002DA480 /* Build configuration list for PBXProject "OptionPricer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79F222D32AF20C2B008AC9B9 /* Debug */,
-				79F222D42AF20C2B008AC9B9 /* Release */,
+				7917B6F02B05D515002DA480 /* Debug */,
+				7917B6F12B05D515002DA480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		79F222D52AF20C2B008AC9B9 /* Build configuration list for PBXNativeTarget "BinomialOptionPricer" */ = {
+		7917B6F22B05D515002DA480 /* Build configuration list for PBXNativeTarget "OptionPricer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				79F222D62AF20C2B008AC9B9 /* Debug */,
-				79F222D72AF20C2B008AC9B9 /* Release */,
+				7917B6F32B05D515002DA480 /* Debug */,
+				7917B6F42B05D515002DA480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 79F222C62AF20C2B008AC9B9 /* Project object */;
+	rootObject = 7917B6E32B05D515002DA480 /* Project object */;
 }
