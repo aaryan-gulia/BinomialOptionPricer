@@ -1,13 +1,13 @@
 
 #include "IO.hpp"
-
-#include<iostream>
+#include "Algorithms.hpp"
+#include <iostream>
 #include <cmath>
 #include <cstdlib>
 
-using std::cout, std::cin;
+using std::cout, std::cin, std::endl, std::istream;
 
-inline void IO::read(const std::istream &is, Options::OptionType &currType){
+void IO::read(const std::istream &is, Options::ExpirationType &currType){
     while(!(cin>>currType)){
         cout<<"ENTER A VALID OPTION TYPE"<<endl;
         cin.clear();
@@ -16,7 +16,15 @@ inline void IO::read(const std::istream &is, Options::OptionType &currType){
     
 }
 
-inline void IO::read(const std::istream &is, float &numVal){
+void IO::read(const std::istream &is, Algorithms::ModelSelector &model){
+    while(!(cin>>model)){
+        cout<<"ENTER A VALID MODEL NUMBER"<<endl;
+        cin.clear();
+        cin.ignore(100,'\n');
+    }
+}
+
+void IO::read(const std::istream &is, double &numVal){
     while(!(cin>>numVal) || numVal < 0){
         cout<<"ENTER A POSITIVE NUMERICAL VALUE"<<endl;
         cin.clear();
@@ -24,7 +32,7 @@ inline void IO::read(const std::istream &is, float &numVal){
     }
 }
 
-inline void IO::read(const std::istream &is, int &intVal){
+void IO::read(const std::istream &is, int &intVal){
     float temp;
     while(!(cin>>temp) || temp - floor(temp) || intVal <  0){
         cout<<"ENTER AN POSITIVE INTEGER VALUE"<<endl;
@@ -34,8 +42,18 @@ inline void IO::read(const std::istream &is, int &intVal){
     intVal = (int)temp;
 }
 
+void IO::read(const std::istream &is, int &intVal, const int &min, const int &max){
+    float temp;
+    while(!(cin>>temp) || temp - floor(temp) || intVal <  min || intVal > max){
+        cout<<"ENTER A VALID INTEGER"<<endl;
+        cin.clear();
+        cin.ignore(100,'\n');
+    }
+    intVal = (int)temp;
+}
+
 istream& operator>>(std::istream& is, Options &option){
-    cout<<"option type \n(European Call: EC, European Put: EP, American Call: AC, American Put: AP)\n";
+    cout<<"option type (European(E), American(A)): ";
     IO::read(cin, option.currType);
     cout<<"strike price: ";
     IO::read(cin, option.strike);
@@ -43,36 +61,47 @@ istream& operator>>(std::istream& is, Options &option){
     IO::read(cin, option.underlying);
     cout<<"volitility: ";
     IO::read(cin, option.vol);
-    cout<<"Dividend Yield: ";
-    IO::read(cin, option.dividend);
-    cout<<"time period: ";
+    cout<<"annual yield: ";
+    IO::read(cin, option.yield);
+    cout<<"time to maturity: ";
     IO::read(cin, option.timePeriod);
-    cout<<"number of steps: ";
-    IO::read(cin, option.steps);
     cout<<"risk free interest rate: ";
     IO::read(cin, option.rate);
     
     return is;
 }
 
-ostream& operator<<(std::ostream& os, const Options &option){
+std::ostream& operator<<(std::ostream& os, const Options &option){
     cout<<"THIS IS AN OPTION";
     return os;
 }
 
-istream& operator>>(istream& is, Options::OptionType& optionType)
+istream& operator>>(istream& is, Options::ExpirationType& currType)
 {
-    string name;
+    std::string name;
     is >> name;
 
-    if (name == "EC")
-        optionType = Options::OptionType::europeanCall;
-    else if (name == "EP")
-        optionType = Options::OptionType::europeanPut;
-    else if (name == "AC")
-        optionType = Options::OptionType::americanCall;
-    else if (name == "AP")
-        optionType = Options::OptionType::americanPut;
+    if (name == "E")
+        currType = Options::ExpirationType::european;
+    else if (name == "A")
+        currType = Options::ExpirationType::american;
+    else{
+        is.setstate(std::ios::failbit);
+    }
+
+    return is;
+}
+
+std::istream& operator>>(std::istream& is, Algorithms::ModelSelector& currType){
+    std::string name;
+    is >> name;
+
+    if (name == "1")
+        currType = Algorithms::ModelSelector::binomial_model;
+    else if (name == "2")
+        currType = Algorithms::ModelSelector::blackscholes_model;
+    else if (name == "3")
+        currType = Algorithms::ModelSelector::montecarlo_model;
     else{
         is.setstate(std::ios::failbit);
     }

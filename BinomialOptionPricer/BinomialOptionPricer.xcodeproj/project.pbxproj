@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		79B91A372B00F53800BAA6E8 /* IO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79B91A352B00F53800BAA6E8 /* IO.cpp */; };
+		79DCF10B2B050E6600D4F264 /* Algorithms.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79DCF1092B050E6600D4F264 /* Algorithms.cpp */; };
 		79F222D22AF20C2B008AC9B9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79F222D12AF20C2B008AC9B9 /* main.cpp */; };
 		79F222DA2AF20C86008AC9B9 /* Options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 79F222D82AF20C86008AC9B9 /* Options.cpp */; };
 /* End PBXBuildFile section */
@@ -25,8 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		79A8ACA62B05BD94001A0213 /* BinomialOptionPricer.profdata */ = {isa = PBXFileReference; lastKnownFileType = file; path = BinomialOptionPricer.profdata; sourceTree = "<group>"; };
 		79B91A352B00F53800BAA6E8 /* IO.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IO.cpp; sourceTree = "<group>"; };
 		79B91A362B00F53800BAA6E8 /* IO.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IO.hpp; sourceTree = "<group>"; };
+		79DCF1092B050E6600D4F264 /* Algorithms.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Algorithms.cpp; sourceTree = "<group>"; };
+		79DCF10A2B050E6600D4F264 /* Algorithms.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Algorithms.hpp; sourceTree = "<group>"; };
 		79F222CE2AF20C2B008AC9B9 /* BinomialOptionPricer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinomialOptionPricer; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F222D12AF20C2B008AC9B9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		79F222D82AF20C86008AC9B9 /* Options.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Options.cpp; sourceTree = "<group>"; };
@@ -44,11 +48,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79A8ACA52B05BD94001A0213 /* OptimizationProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				79A8ACA62B05BD94001A0213 /* BinomialOptionPricer.profdata */,
+			);
+			path = OptimizationProfiles;
+			sourceTree = "<group>";
+		};
 		79F222C52AF20C2B008AC9B9 = {
 			isa = PBXGroup;
 			children = (
 				79F222D02AF20C2B008AC9B9 /* BinomialOptionPricer */,
 				79F222CF2AF20C2B008AC9B9 /* Products */,
+				79A8ACA52B05BD94001A0213 /* OptimizationProfiles */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +81,8 @@
 				79B91A362B00F53800BAA6E8 /* IO.hpp */,
 				79F222D82AF20C86008AC9B9 /* Options.cpp */,
 				79F222D92AF20C86008AC9B9 /* Options.hpp */,
+				79DCF1092B050E6600D4F264 /* Algorithms.cpp */,
+				79DCF10A2B050E6600D4F264 /* Algorithms.hpp */,
 			);
 			path = BinomialOptionPricer;
 			sourceTree = "<group>";
@@ -130,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79F222DA2AF20C86008AC9B9 /* Options.cpp in Sources */,
+				79DCF10B2B050E6600D4F264 /* Algorithms.cpp in Sources */,
 				79B91A372B00F53800BAA6E8 /* IO.cpp in Sources */,
 				79F222D22AF20C2B008AC9B9 /* main.cpp in Sources */,
 			);
@@ -256,9 +272,10 @@
 		79F222D62AF20C2B008AC9B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = /Users/aaryangulia/Downloads/boost_1_82_0;
+				LIBRARY_SEARCH_PATHS = /Users/aaryangulia/Downloads/boost_1_82_0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -266,9 +283,10 @@
 		79F222D72AF20C2B008AC9B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_USE_OPTIMIZATION_PROFILE = YES;
 				CODE_SIGN_STYLE = Automatic;
-				HEADER_SEARCH_PATHS = "";
-				LIBRARY_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = /Users/aaryangulia/Downloads/boost_1_82_0;
+				LIBRARY_SEARCH_PATHS = /Users/aaryangulia/Downloads/boost_1_82_0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
